@@ -1,4 +1,4 @@
-package com.example.catologo_filmes
+package com.example.catologo_filmes.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.catologo_filmes.R
 import com.example.catologo_filmes.databinding.FragmentDetailsBinding
 
 class DetailsFragment : Fragment() {
@@ -37,7 +38,7 @@ class DetailsFragment : Fragment() {
         buttonVoltar = activity?.findViewById(R.id.button_voltar)
         buttonVoltar?.visibility = View.GONE
         textViewToolbar = activity?.findViewById(R.id.text_view_toolbar)
-        textViewToolbar?.text =String.format(R.string.details_title.toString())
+        textViewToolbar?.text = getText(R.string.details_title)
     }
 
 }

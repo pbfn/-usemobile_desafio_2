@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Usemobile/Catologo_Filmes/app/src/main/res/drawable/shape_image_radius.xml" value="0.3828125" />
         <entry key="..\:/Usemobile/Catologo_Filmes/app/src/main/res/layout/activity_main.xml" value="0.5871559633027523" />
+        <entry key="..\:/Usemobile/Catologo_Filmes/app/src/main/res/layout/fragment_details.xml" value="0.36666666666666664" />
+        <entry key="..\:/Usemobile/Catologo_Filmes/app/src/main/res/layout/fragment_home.xml" value="0.5474339035769828" />
       </map>
     </option>
   </component>

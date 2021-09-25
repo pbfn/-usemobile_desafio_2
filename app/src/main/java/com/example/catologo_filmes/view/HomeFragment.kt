@@ -1,4 +1,4 @@
-package com.example.catologo_filmes
+package com.example.catologo_filmes.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.catologo_filmes.R
 import com.example.catologo_filmes.databinding.FragmentHomeBinding
 
 
@@ -31,6 +32,10 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setToolbar()
+
+        //propriedade para arrendodar a borda
+        binding.imageLancamento.clipToOutline= true
+
         super.onViewCreated(view, savedInstanceState)
     }
 
@@ -38,7 +43,7 @@ class HomeFragment : Fragment() {
         buttonVoltar = activity?.findViewById(R.id.button_voltar)
         buttonVoltar?.visibility = View.GONE
         textViewToolbar = activity?.findViewById(R.id.text_view_toolbar)
-        textViewToolbar?.text = String.format(R.string.app_name.toString())
+        textViewToolbar?.text = getText(R.string.app_name)
     }
 
 }

@@ -2,6 +2,13 @@
     <string name="app_name">Nerdflix</string>
     <string name="details_title">Detalhes do filme</string>
     <string name="view_more_title">Ver mais</string>
+    <string name="title_lancamento">Lançamento</string>
+    <string name="titulo_filme">Título filme</string>
+    <string name="text_actors">Ethan Hawke - Sarah Snook - Noah Taylor</string>
+    <string name="para_voce">Para você</string>
+    <string name="ver_mais">Ver mais</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
