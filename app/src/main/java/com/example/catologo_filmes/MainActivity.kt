@@ -14,36 +14,29 @@ class MainActivity : AppCompatActivity() {
 
 
     private lateinit var movieViewModel: MovieViewModel
-
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        insertItens()
+
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
-        binding.buttonVoltar.visibility = View.GONE
+        binding.buttonVoltar.visibility = View.VISIBLE
 
-        setUpViewModel()
-        clickEvent()
-        observeData()
-
-//        val db = RoomConnection(this).db()
-//        val movie1 = Movie("1","2","Teste de filme 1")
-//        val movie2 = Movie("2","2","Teste de filme 2")
-//        db.movieDao().insertAll(movie1,movie2)
-//        db.movieDao().getAll()
-//        db.movieDao().getAll()
+       // setUpViewModel()
     }
 
     private fun setUpViewModel() {
         movieViewModel = ViewModelProvider(this).get(MovieViewModel::class.java)
+        movieViewModel.getDetailsFilms("tt0388629",this)
     }
 
     private fun observeData() {
-        movieViewModel.callBody.observe(this, { respBody ->
-            Toast.makeText(this, respBody.items.get(0).title, Toast.LENGTH_LONG).show()
+        val db = RoomConnection(this).db()
+        movieViewModel.callBodyDetails.observe(this, { movie ->
+            Toast.makeText(this, movie.title, Toast.LENGTH_LONG).show()
         })
 
         movieViewModel.errorMessage.observe(this, { errorMessage ->
@@ -53,9 +46,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun clickEvent() {
         binding.apply {
-            buttonText.setOnClickListener {
-                movieViewModel.getFilmes()
+            buttonVoltar.setOnClickListener {
+
             }
         }
     }
+
+
+    private fun insertItens(){
+        val db = RoomConnection(this).db()
+        for ( movie in DataProvider.MovieList){
+            db.movieDao().insertAll(movie)
+        }
+        db.movieDao().getAll()
+    }
+
 }

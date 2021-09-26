@@ -24,7 +24,6 @@ class RetrofitInstace {
 
     }
 
-
     fun <S> createService(service: Class<S>):S{
         return getRetrofit().create(service)
     }
