@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.DetailsFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/dark_gray"
+        tools:context=".view.DetailsFragment">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/image_movie_details"
+            android:layout_width="182dp"
+            android:layout_height="266dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/shape_image_radius"
+            android:clipToOutline="true"
+            android:src="@drawable/img_auxiliar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_title_details"
+            style="@style/text_view_title_lancamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/titulo_filme"
+            app:layout_constraintTop_toBottomOf="@+id/image_movie_details" />
+
+        <TextView
+            android:id="@+id/text_view_atores_details"
+            style="@style/text_view_title_atores_lancamento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/text_actors"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_title_details" />
+
+        <View
+            android:id="@+id/view_separator1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/gray_separator"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_atores_details" />
+
+        <TextView
+            android:id="@+id/text_view_sinopse_title"
+            style="@style/text_view_item_sinopse_title"
+            android:text="@string/sinopse_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_separator1" />
+
+
+        <TextView
+            android:id="@+id/text_view_sinopse"
+            style="@style/text_view_item_sinopse"
+            android:text="@string/sinopse"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_sinopse_title" />
+
+        <View
+            android:id="@+id/view_separator2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/gray_separator"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_sinopse" />
+
+        <TextView
+            android:id="@+id/text_view_elenco"
+            style="@style/text_view_item_sinopse_title"
+            android:text="@string/elenco"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_separator2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_elenco" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

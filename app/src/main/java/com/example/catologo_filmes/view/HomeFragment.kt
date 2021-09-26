@@ -79,8 +79,8 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun clickItem(name: String){
-        //Toast.makeText(this, "$name" , Toast.LENGTH_SHORT).show()
+    fun clickItem(movie: Movie){
+
     }
 
 }

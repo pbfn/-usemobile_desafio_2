@@ -7,7 +7,7 @@ import com.example.catologo_filmes.data.Movie
 import com.example.catologo_filmes.databinding.ItemListMovieBinding
 import com.squareup.picasso.Picasso
 
-class RecyclerViewAdapterMovie(val list: ArrayList<Movie>,  val function: (name: String) -> Unit):
+class RecyclerViewAdapterMovie(val movies: ArrayList<Movie>,  val function: (movie: Movie) -> Unit):
     RecyclerView.Adapter<RecyclerViewAdapterMovie.ViewHolder>() {
 
 
@@ -22,13 +22,16 @@ class RecyclerViewAdapterMovie(val list: ArrayList<Movie>,  val function: (name:
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Picasso.get().load(list[position].image).into(holder.imgMovie)
+        Picasso.get().load(movies[position].image).into(holder.imgMovie)
         holder.imgMovie.clipToOutline= true
-        holder.titleMovie.text = list[position].title
+        holder.titleMovie.text = movies[position].title
+        holder.itemView.setOnClickListener{
+            function(movies[position])
+        }
     }
 
     override fun getItemCount(): Int {
-        return list.size
+        return movies.size
     }
 
 }

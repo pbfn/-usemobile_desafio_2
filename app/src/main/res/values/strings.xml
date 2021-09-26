@@ -7,8 +7,11 @@
     <string name="text_actors">Ethan Hawke - Sarah Snook - Noah Taylor</string>
     <string name="para_voce">Para você</string>
     <string name="ver_mais">Ver mais</string>
-
+    <string name="sinopse">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sinopse_title">Sinopse</string>
+    <string name="elenco">Elenco</string>
+    <string name="pedro_bruno">Pedro Bruno</string>
 
 </resources>
