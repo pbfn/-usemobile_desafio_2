@@ -4,7 +4,15 @@ import com.example.catologo_filmes.data.Movie
 
 object DataProvider {
     val MovieList = arrayListOf(
-
+        Movie(
+          "tt8515016",
+            "Banana Fish",
+            "Banana Fish (2018)",
+            "2018",
+            "https://imdb-api.com/images/original/MV5BYzZmNWJmMjctNTFhMy00MDZhLThiZTgtMjU5YmI2OTE2MGRkXkEyXkFqcGdeQXVyMzI2Mjc1NjQ@._V1_Ratio0.7046_AL_.jpg",
+            "Nature made Ash Lynx beautiful; nurture made him a cold ruthless killer. A runaway brought up as the adopted heir and sex toy of \"Papa\" Dino Golzine, Ash, now at the rebellious age of seventeen, forsakes the kingdom held out by the devil who raised him. But the hideous secret that drove Ash's older brother mad in Vietnam has suddenly fallen into Papa's insatiably ambitious hands—and it's exactly the wrong time for Eiji Okamura, a pure-hearted young photographer from Japan, to make Ash Lynx's acquaintance...",
+            "Jun Fukuyama, Makoto Furukawa, Hiroaki Hirata",
+        ),
         Movie(
             "tt0388629",
             "One Piece",

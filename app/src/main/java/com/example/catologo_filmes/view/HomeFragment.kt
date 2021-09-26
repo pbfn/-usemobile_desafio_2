@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.catologo_filmes.DataProvider
 import com.example.catologo_filmes.R
+import com.example.catologo_filmes.RecyclerViewAdapterMovie
 import com.example.catologo_filmes.connection.RoomConnection
 import com.example.catologo_filmes.data.Movie
 import com.example.catologo_filmes.databinding.FragmentHomeBinding
@@ -23,7 +27,8 @@ class HomeFragment : Fragment() {
     private var buttonVoltar: ImageView? = null
     private var textViewToolbar: TextView? = null
 
-    private lateinit var movieViewModel: MovieViewModel
+
+    private lateinit var adapterRecycler: RecyclerViewAdapterMovie
 
 
     override fun onCreateView(
@@ -35,15 +40,15 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         setToolbar()
         initViews()
+        setRecyclerListSimpleHorizontal()
         super.onViewCreated(view, savedInstanceState)
     }
 
     private fun setToolbar() {
         buttonVoltar = activity?.findViewById(R.id.button_voltar)
-        buttonVoltar?.visibility = View.VISIBLE
+        buttonVoltar?.visibility = View.GONE
         textViewToolbar = activity?.findViewById(R.id.text_view_toolbar)
         textViewToolbar?.text = getText(R.string.app_name)
     }
@@ -58,6 +63,24 @@ class HomeFragment : Fragment() {
             imageLancamento.clipToOutline= true
             textViewAtores.text = movie?.stars
         }
+    }
+
+    fun setRecyclerListSimpleHorizontal() {
+        val layoutOne = LinearLayoutManager(context , LinearLayoutManager.HORIZONTAL, false)
+        val layoutTwo = LinearLayoutManager(context , LinearLayoutManager.HORIZONTAL, false)
+        adapterRecycler = RecyclerViewAdapterMovie(DataProvider.MovieList, ::clickItem)
+        binding.recyclerViewForAcao.apply {
+                layoutManager = layoutOne
+                adapter = adapterRecycler
+        }
+        binding.recyclerViewForYou.apply {
+            layoutManager = layoutTwo
+            adapter = adapterRecycler
+        }
+    }
+
+    fun clickItem(name: String){
+        //Toast.makeText(this, "$name" , Toast.LENGTH_SHORT).show()
     }
 
 }

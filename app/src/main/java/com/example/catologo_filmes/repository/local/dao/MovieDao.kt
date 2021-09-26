@@ -10,7 +10,7 @@ import com.example.catologo_filmes.data.Movie
 @Dao
 interface MovieDao {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg movie:Movie)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
