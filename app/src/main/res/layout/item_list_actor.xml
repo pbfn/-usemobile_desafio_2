@@ -3,25 +3,31 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/light_gray"
+    android:background="@color/dark_gray"
     >
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_view_actor"
         android:layout_width="103dp"
         android:layout_height="103dp"
+        android:layout_marginRight="16dp"
         android:src="@drawable/img_auxiliar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        style="@style/text_view_name_actor"
         android:id="@+id/text_view_name_actor"
+        style="@style/text_view_name_actor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pedro_bruno"
         android:paddingBottom="24dp"
+        android:text="@string/pedro_bruno"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_view_actor" />
+        app:layout_constraintTop_toBottomOf="@+id/image_view_actor"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

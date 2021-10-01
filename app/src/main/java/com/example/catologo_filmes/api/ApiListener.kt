@@ -1,10 +1,9 @@
 package com.example.catologo_filmes.api
 
-import com.example.catologo_filmes.data.Movie
+interface ApiListener<T> {
 
-interface ApiListener {
-
-    fun onSucess(body: Movie)
+    fun onSucess(body: T)
 
     fun onFailure(message:String)
+
 }

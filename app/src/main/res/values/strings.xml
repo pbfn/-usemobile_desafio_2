@@ -13,5 +13,7 @@
     <string name="sinopse_title">Sinopse</string>
     <string name="elenco">Elenco</string>
     <string name="pedro_bruno">Pedro Bruno</string>
+    <string name="action">Ação</string>
+    <string name="drama">Drama</string>
 
 </resources>

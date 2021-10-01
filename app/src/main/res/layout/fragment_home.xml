@@ -7,10 +7,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:background="@color/black"
-        tools:context=".view.HomeFragment">
+        tools:context=".fragment.HomeFragment">
 
 
         <TextView
@@ -46,6 +46,7 @@
             style="@style/text_view_title_atores_lancamento"
             android:text="@string/text_actors"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_view_title_lancamento" />
 
@@ -53,7 +54,7 @@
             android:id="@+id/linearLayout_for_you"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="33dp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,50 +65,88 @@
                 android:text="@string/para_voce" />
 
             <TextView
+                android:clickable="true"
+                android:id="@+id/text_view_view_more_for_you"
                 style="@style/text_view_ver_mais"
-                android:text="@string/ver_mais" />
+                android:text="@string/ver_mais"
+                android:focusable="true" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_for_you"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout_for_you" />
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/linearLayoutCompat"
+            android:id="@+id/linearLayoutCompat_action"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="33dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/recycler_view_for_you">
 
             <TextView
                 style="@style/text_view_categoria"
-                android:text="@string/para_voce" />
+                android:text="@string/action" />
 
             <TextView
+                android:clickable="true"
+                android:id="@+id/text_view_view_more_action"
                 style="@style/text_view_ver_mais"
-                android:text="@string/ver_mais" />
+                android:text="@string/ver_mais"
+                android:focusable="true" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view_for_acao"
+            android:id="@+id/recycler_view_for_action"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat_action" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat_drama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="33dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/recycler_view_for_action">
+
+            <TextView
+                style="@style/text_view_categoria"
+                android:text="@string/drama" />
+
+            <TextView
+                android:clickable="true"
+                android:id="@+id/text_view_view_more_drama"
+                style="@style/text_view_ver_mais"
+                android:text="@string/ver_mais"
+                android:focusable="true" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_for_drama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat_drama" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </ScrollView>
